@@ -1,0 +1,20 @@
+---
+import { getAllTags } from "@/utils/getAllTags";
+// import { Icon } from "astro-icon/components"
+const tags = await getAllTags();
+---
+
+<div class="flex gap-3 justify-center">
+  <!-- <Icon class="text-white text-2xl" name="lucide:list-filter" /> -->
+  <!-- <div class="hidden"> -->
+  {
+    tags.map((tag) => (
+      <a href={`/blog/${tag.toLowerCase()}`}>
+        <span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-700  font-medium tracking-widest">
+          {tag}
+        </span>
+      </a>
+    ))
+  }
+  <!-- </div> -->
+</div>

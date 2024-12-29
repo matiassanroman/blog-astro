@@ -1,0 +1,45 @@
+---
+import FormattedDate from "@/components/FormattedDate.astro";
+import { type CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"blog">["data"] & { slug: string };
+const { image, title, pubDate, tags, slug } = Astro.props;
+---
+
+<div transition:name={title}>
+  <article>
+    <a
+      rel="noopener noreferrer"
+      href={`/blog/article/${slug}`}
+      class="max-w-sm mx-auto group bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-xl"
+    >
+      <img
+        role="presentation"
+        class="object-cover w-full rounded h-44"
+        src={image}
+      />
+      <div class="p-6 space-y-2">
+        <h3
+          class="text-2xl font-semibold group-hover:underline group-focus:underline"
+        >
+          {title}
+        </h3>
+        <FormattedDate date={pubDate} />
+        <p>
+          Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur,
+          ex has tantas percipit perfecto. At per tempor albucius perfecto, ei
+          probatus consulatu patrioque mea, ei vocent delicata indoctum pri.
+        </p>
+        <div class="flex gap-2">
+          {
+            tags.map((tag) => (
+              <span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-700 font-medium tracking-widest">
+                {tag}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </a>
+  </article>
+</div>

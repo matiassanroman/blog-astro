@@ -1,0 +1,52 @@
+---
+import { getAllTags } from "@/utils/getAllTags";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import ArticleList from "@/layouts/ArticleList.astro";
+import Article from "@/components/Article.astro";
+import Pagination from "@/components/Pagination.astro";
+
+export async function getCollectionForTag(tag: string) {
+  return (await getCollection("blog", ({ data }) =>
+    data.tags.map((tagItem) => tagItem.toLowerCase()).includes(tag)
+  )).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+}
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const tags = (await getAllTags()).map((tag) => tag.toLowerCase());
+
+  //return tags.map((tag) => ({ params: { tag }, props: { tag } }));
+
+  const paths = [];
+  for (const tag of tags) {
+    const postsForTag = await getCollectionForTag(tag); // Espera a que se resuelvan los posts
+    const paginatedPaths = paginate(postsForTag, {
+      params: { tag },
+      pageSize: 6,
+    });
+    paths.push(...paginatedPaths);
+  }
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+// const params = Astro.params;
+
+// const posts = await getCollection("blog", ({ data }) =>
+//   data.tags.map((data) => data.toLowerCase()).includes(tag)
+// );
+---
+
+
+<ArticleList>
+  {page.data.map((post) => <Article {...post.data} slug={post.slug} />)}
+</ArticleList>
+<Pagination
+  prevUrl={page.url.prev}
+  nextUrl={page.url.next}
+  currentPage={page.currentPage}
+  lastPage={page.lastPage}
+/>

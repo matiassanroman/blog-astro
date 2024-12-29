@@ -1,0 +1,49 @@
+---
+interface Props {
+  showButton: boolean;
+}
+
+const { showButton } = Astro.props;
+---
+
+<div class="w-full h-full bg-gray-900">
+  <div
+    class="h-full w-full mx-auto relative top-12 pb-20 xl:px-16 px-8 flex md:flex-row flex-col gap-4 justify-center items-center pb-10 pt-4"
+  >
+    <div class="w-full relative">
+      <img
+        class="relative z-10 rounded-full w-64 h-64 sm:w-80 sm:h-80 mx-auto"
+        src="/images/mia.jpg"
+        alt="My Image"
+      />
+    </div>
+    <div
+      class="w-full flex flex-col justify-center gap-4 md:text-left text-center text-white md:mt-0 sm:mt-8 mt-4"
+    >
+      <h1 class="md:text-4xl sm:text-3xl text-2xl font-semibold font-serif">
+        Hello, My name is Matias San Roman
+      </h1>
+      <h2 class="capitalize">i'm Backend Developer</h2>
+      <p>
+        Experienced full-stack developer with 4+ years of expertise in Laravel,
+        NestJS, Nuxt.js, Next.js, Android, and some Flutter experience.
+      </p>
+      <div class="sm:mt-4 mt-2">
+        {
+          showButton ? (
+            <a
+              href="/about"
+              class="px-6 py-1 bg-blue-700 text-white rounded-sm"
+            >
+              About Me
+            </a>
+          ) : (
+            null
+          )
+        }
+        <a>GitHub</a>
+        <a>Linkedin</a>
+      </div>
+    </div>
+  </div>
+</div>
