@@ -42,7 +42,7 @@ const { page } = Astro.props;
 
 
 <ArticleList>
-  {page.data.map((post) => <Article {...post.data} slug={post.slug} />)}
+  {page.data.map((post) => <Article {...post.data} slug={post.slug} body={post.body} />)}
 </ArticleList>
 <Pagination
   prevUrl={page.url.prev}

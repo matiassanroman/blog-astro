@@ -2,16 +2,26 @@
 import FormattedDate from "@/components/FormattedDate.astro";
 import { type CollectionEntry } from "astro:content";
 
-type Props = CollectionEntry<"blog">["data"] & { slug: string };
-const { image, title, pubDate, tags, slug } = Astro.props;
+const getDescription = (content: string, length = 100) => {
+  // Elimina etiquetas HTML (si las hay) y corta el contenido
+  return (
+    content
+      .replace(/<[^>]*>/g, "") // Eliminar etiquetas HTML
+      .slice(0, length) + "..."
+  );
+};
+
+type Props = CollectionEntry<"blog">["data"] & { slug: string } & { body: string };
+
+const { image, title, pubDate, tags, slug, body } = Astro.props;
 ---
 
 <div transition:name={title}>
-  <article>
+  <article class="bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-xl">
     <a
       rel="noopener noreferrer"
       href={`/blog/article/${slug}`}
-      class="max-w-sm mx-auto group bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-xl"
+      class="max-w-sm mx-auto group"
     >
       <img
         role="presentation"
@@ -26,9 +36,7 @@ const { image, title, pubDate, tags, slug } = Astro.props;
         </h3>
         <FormattedDate date={pubDate} />
         <p>
-          Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur,
-          ex has tantas percipit perfecto. At per tempor albucius perfecto, ei
-          probatus consulatu patrioque mea, ei vocent delicata indoctum pri.
+          {getDescription(body)}
         </p>
         <div class="flex gap-2">
           {

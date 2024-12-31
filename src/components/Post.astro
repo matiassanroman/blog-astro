@@ -1,0 +1,88 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
+import TagSelector from "./TagSelector.astro";
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 4);
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, image, pubDate, tags } = Astro.props;
+---
+
+<Layout title={title}>
+  <div class="flex flex-col">
+    <!-- Encabezado -->
+    <div class="bg-gray-100 py-8 sm:py-6">
+      <div class="container mx-auto px-6 sm:px-4">
+        <div class="flex gap-2">
+          {
+            tags.map((tag) => (
+              <span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-700 font-medium tracking-widest">
+                {tag}
+              </span>
+            ))
+          }
+        </div>
+        <h1 class="text-4xl sm:text-3xl font-bold text-gray-800 mb-2">
+          {title}
+        </h1>
+        <FormattedDate date={pubDate} />
+      </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="bg-white py-8 sm:py-6">
+      <div class="container mx-auto px-6 sm:px-4 flex flex-col gap-8 md:flex-row">
+        <!-- Artículo principal -->
+        <div class="w-full md:w-3/4 md:border-r md:pr-6" transition:name={title}>
+          <article>
+            <img
+              src={image}
+              alt="Blog Featured Image"
+              class="mb-8 w-full object-cover rounded-lg shadow-md"
+            />
+            <div class="prose lg:prose-lg sm:prose-sm">
+              <slot />
+            </div>
+          </article>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="w-full md:w-1/4 px-6 sm:px-4">
+          <!-- Recent Posts -->
+          <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+            <h2 class="text-xl sm:text-lg font-semibold text-gray-800 mb-4">
+              Post Recientes:
+            </h2>
+            <ul class="list-none space-y-4">
+              {posts.map((post) => (
+                
+                  <a
+                    href={`/blog/article/${post.slug}`}
+                    class="text-lg sm:text-base text-blue-700 font-medium tracking-widest block px-4 py-1"
+                  >
+                    {post.data.title}
+                  </a>
+                
+              ))}
+            </ul>
+          </div>
+          <!-- Categories -->
+          <div class="bg-gray-100 p-6 mt-6 rounded-lg shadow-md">
+            <h2 class="text-xl sm:text-lg font-semibold text-gray-800 mb-4">
+              Categorias:
+            </h2>
+            <ul class="list-none space-y-3">
+              <TagSelector />
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
