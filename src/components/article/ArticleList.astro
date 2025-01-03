@@ -35,7 +35,7 @@ const { image, title, pubDate, tags, slug, body } = Astro.props;
           {title}
         </h3>
         <FormattedDate date={pubDate} />
-        <p>
+        <p class="text-xs sm:text-xs lg:text-xl">
           {getDescription(body)}
         </p>
         <div class="flex gap-2">

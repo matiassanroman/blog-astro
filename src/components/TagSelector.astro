@@ -1,12 +1,9 @@
 ---
 import { getAllTags } from "@/utils/getAllTags";
-// import { Icon } from "astro-icon/components"
 const tags = await getAllTags();
 ---
 
 <div class="flex gap-3 justify-center">
-  <!-- <Icon class="text-white text-2xl" name="lucide:list-filter" /> -->
-  <!-- <div class="hidden"> -->
   {
     tags.map((tag) => (
       <a href={`/blog/${tag.toLowerCase()}`}>
@@ -16,5 +13,4 @@ const tags = await getAllTags();
       </a>
     ))
   }
-  <!-- </div> -->
 </div>

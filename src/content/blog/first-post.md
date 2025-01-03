@@ -1,7 +1,7 @@
 ---
 title: "My First Post"
 pubDate: "Jul 01 2022"
-image: "/assets/blog-placeholder-1.jpg"
+image: "/articlesImages/blog-placeholder-1.jpg"
 tags: ["AI", "Dev"]
 ---
 

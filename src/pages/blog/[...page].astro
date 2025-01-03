@@ -1,16 +1,15 @@
 ---
 import type { GetStaticPaths } from "astro";
-import Article from "@/components/Article.astro";
+import ArticleList from "@/components/article/ArticleList.astro";
 import { getCollection } from "astro:content";
-import ArticleList from "@/layouts/ArticleList.astro";
-import Pagination from "@/components/Pagination.astro";
+import LayoutArticleList from "@/layouts/LayoutArticleList.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const posts = (await getCollection("blog")).sort(
+  const articles = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
   );
 
-  return paginate(posts, {
+  return paginate(articles, {
     pageSize: 6,
   });
 }) satisfies GetStaticPaths;
@@ -18,12 +17,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 
-<ArticleList>
-  {page.data.map((post) => <Article {...post.data} slug={post.slug} body={post.body} />)}
-</ArticleList>
-<Pagination
-  prevUrl={page.url.prev}
-  nextUrl={page.url.next}
-  currentPage={page.currentPage}
-  lastPage={page.lastPage}
-/>
+<LayoutArticleList title="Blog" prevUrl={page.url.prev}, nextUrl={page.url.next}, currentPage={page.currentPage}, lastPage={page.lastPage}>
+  {page.data.map((article) => <ArticleList {...article.data} slug={article.slug} body={article.body} />)}
+</LayoutArticleList>
+

@@ -1,5 +1,5 @@
 ---
-import Post from "@/components/Post.astro";
+import Article from "@/components/article/Article.astro";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 
@@ -13,6 +13,6 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Post {...post.data}>
+<Article {...post.data}>
   <Content />
-</Post>
+</Article>
