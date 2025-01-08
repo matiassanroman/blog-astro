@@ -1,68 +1,182 @@
 <section id="experience" class="px-3 sm:px-5 md:px-8 py-3">
   <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
-  <div class="container max-w-5xl px-4 py-12 mx-auto">
-    <div class="grid gap-4 mx-4 sm:grid-cols-12">
+  <div class="container max-w-5xl sm:px-4 sm:py-12 mx-auto">
+    <div class="grid gap-4 mx-2 sm:grid-cols-12">
       <div class="col-span-12 sm:col-span-3">
-        <div class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-blue-700">
+        <div class="text-center sm:text-left mb-7 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-blue-700">
           <h3 class="text-2xl sm:text-3xl font-semibold">Experiencia</h3>
         </div>
       </div>
-      <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
-        <div class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-blue-500">
+      <div class="relative col-span-12 sm:px-4 space-y-6 sm:col-span-9">
+        <div class="col-span-12 space-y-12 relative sm:px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-blue-500">
           <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-700">
-            <h3 class="text-xl font-semibold tracking-wide">Santander Digital Services</h3>
-            <time class="text-xs tracking-wide uppercase text-gray-400">Sept. 2024 - Actualidad</time>
-            <p class="mt-3">
-              Me especializo en el desarrollo de procesos ETL y el manejo de grandes volúmenes de datos. 
-              Utilizo Spark/Scala para desarrollar estos procesos, y SQL para la gestión de bases de datos. 
-              Posteriormente, estos datos se ingestan con Elasticsearch y se visualizan en Kibana, creando diversas visualizaciones y dashboards para facilitar el análisis y la toma de decisiones.
+            <h3 class="text-xl font-semibold tracking-wide">Santander Digital Services / Talan</h3>
+            <p class="text-xs tracking-wide uppercase text-gray-400">
+              <time>Abr. 2023 - Actualidad</time> · Málaga, España
             </p>
+            
+            <!-- Responsabilidades -->
+            <p class="mt-3 text-sm sm:text-sm lg:text-md">
+              Desde abril de 2023 hasta septiembre de 2024, trabajé como Consultor Externo en Talan para el cliente Santander Digital Services, y posteriormente fui internalizado como empleado directo.
+            </p>
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Responsabilidades:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm sm:text-sm lg:text-md">
+              <li>Implementación de pipelines para procesar datos masivos de manera eficiente.</li>
+              <li>Gestión y optimización de consultas en bases de datos.</li>
+              <li>Ingesta y visualización de datos mediante dashboards interactivos.</li>
+              <li>Modificación de scripts para la ingestión de datos desde APIs hacia S3.</li>
+            </ul>
+          
+            <!-- Logros -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Logros:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Reducción de errores en procesos de mora a través de la optimización de consultas SQL.</li>
+              <li>Pruebas e integración del MVP con microservicios y sistemas de colas, mejorando la eficiencia de las transacciones de usuarios finales.</li>
+            </ul>
+          
+            <!-- Habilidades -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Habilidades destacadas:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Spring Boot, Spring WebFlux, Java, PL/SQL, Microservicios, Kafka, Git</li>
+            </ul>
           </div>
           <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-700">
-            <h3 class="text-xl font-semibold tracking-wide">Talan</h3>
-            <time class="text-xs tracking-wide uppercase text-gray-400">Abr. 2023 - Sept. 2024</time>
-            <p class="mt-3">
-              Trabajé para el cliente Santander, donde desarrollé procesos ETL con Spark/Scala y SQL para la gestión de bases de datos. 
-              Usé Kibana para las visualizaciones.
+            <h3 class="text-xl font-semibold tracking-wide">VATES - Software (Cliente: CLARO)</h3>
+            <p class="text-xs tracking-wide uppercase text-gray-400">
+              <time>Nov. 2022 - Abr. 2023</time> · Córdoba, Argentina
             </p>
+          
+            <!-- Responsabilidades -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Responsabilidades:</h4>
+            <div class="text-sm lg:text-md">
+              <p class="mt-2">Participé en dos proyectos clave:</p>
+              <ol class="list-decimal list-inside mt-2 ml-3 space-y-2">
+                <li>
+                  Gestión de mora tardía:
+                  <ul class="list-disc list-inside ml-5 space-y-1">
+                    <li>Modificación de scripts que toman los datos de una API y los ingestan en S3.</li>
+                  </ul>
+                </li>
+                <li>
+                  Integración de Mercado Pago:
+                  <ul class="list-disc list-inside ml-5 space-y-1">
+                    <li>Desarrollo de un MVP desde cero para gestionar las transacciones de usuarios mediante Mercado Pago.</li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+          
+            <!-- Logros -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Logros:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Reducción de errores en procesos de mora a través de la optimización de consultas SQL.</li>
+              <li>Pruebas e integración del MVP con microservicios y sistemas de colas, mejorando la eficiencia de las transacciones de usuarios finales.</li>
+            </ul>
+          
+            <!-- Habilidades -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Habilidades destacadas:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Spring Boot, Spring WebFlux, Java, PL/SQL, Microservicios, Kafka, Git</li>
+            </ul>
           </div>
           <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-700">
-            <h3 class="text-xl font-semibold tracking-wide">VATES - Software</h3>
-            <time class="text-xs tracking-wide uppercase text-gray-400">Nov. 2022 - Abr. 2023</time>
-            <p class="mt-3">
-              Trabajé para el cliente CLARO. Durante mi tiempo allí, participé en dos proyectos principales. 
-              En el primero, relacionado con la gestión de mora tardía (deudores), me encargué de mejorar funcionalidades existentes y desarrollar nuevas utilizando PL/SQL. 
-              En el segundo proyecto, llevé a cabo el desarrollo de un MVP para integrar Mercado Pago como método de pago. 
-              Utilicé tecnologías como Spring Boot 3, Java 17, Oracle SQL, API Rest, MicroServicios, Kafka y Web Flux para esta implementación.
+            <h3 class="text-xl font-semibold tracking-wide">CDA Informática (Cliente: Prisma Medios de Pago)</h3>
+            <p class="text-xs tracking-wide uppercase text-gray-400">
+              <time>Ago. 2021 - Nov. 2022</time> · Buenos Aires, Argentina
             </p>
-          </div>
-          <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-700">
-            <h3 class="text-xl font-semibold tracking-wide">CDA Informática</h3>
-            <time class="text-xs tracking-wide uppercase text-gray-400">Ago. 2021 - Nov. 2022</time>
-            <p class="mt-3">
-              Trabajé para el cliente Prisma Medios de Pago en un proyecto de migración de un sistema de resúmenes de liquidaciones para comercios. 
-              El objetivo principal del proyecto era actualizar y modernizar el sistema existente, que estaba en producción y utilizaba tecnologías como Java 7, Scala, Groovy, Grails y SBT, migrándolo a tecnologías más actuales como Java 8 y Spring Boot.
-              Mi función principal en el proyecto fue desacoplar el sistema monolítico existente, transformándolo en una arquitectura basada en API Rest y servicios, mejorando la escalabilidad y mantenibilidad del sistema.
-            </p>
+          
+            <!-- Responsabilidades -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Responsabilidades:</h4>
+            <div class="text-sm lg:text-md">
+              <p class="mt-2">Participé en dos proyectos clave:</p>
+              <ol class="list-decimal list-inside mt-2 ml-3 space-y-2">
+                <li>
+                  Participación en un proyecto de migración y modernización del sistema de resúmenes de liquidaciones para comercios:
+                  <ul class="list-disc list-inside ml-5 space-y-1">
+                    <li>Migración de tecnologías de Java 7 y Scala a Java 8 y Spring Boot.</li>
+                    <li>Transformación de un sistema muy acoplado a una arquitectura basada en API Rest y servicios.</li>
+                  </ul>
+                </li>
+                <li>
+                  Desarrollo de una interfaz web con React para la visualización de resúmenes de liquidaciones.
+                </li>
+              </ol>
+            </div>
+          
+            <!-- Logros -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Logros:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Incremento de la escalabilidad y desacople del sistema, facilitando futuras integraciones.</li>
+              <li>Creación de una interfaz moderna que optimizó la búsqueda de liquidaciones..</li>
+            </ul>
+          
+            <!-- Habilidades -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Habilidades destacadas:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Spring Boot, Scala, Hibernate, React, API Rest, Servicios</li>
+            </ul>
           </div>
           <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-700">
             <h3 class="text-xl font-semibold tracking-wide">Profesor Universitario Asistente</h3>
-            <time class="text-xs tracking-wide uppercase text-gray-400">Mar. 2021 - Ago. 2021</time>
-            <p class="mt-3">
-              Colaboré en la materia de Programación 3 de la carrera TUDAI (Tecnicatura Universitaria en Desarrollo de Aplicaciones Informáticas) de la UNICEN (Universidad Nacional del Centro de la Provincia de Buenos Aires). Durante mi colaboración, me enfoqué en explicar conceptos complejos, corregir entregables y guiar a los estudiantes en su proceso de aprendizaje.
-              La materia se centraba en que sigan mejorando los conceptos de programacion orientada a objetos y hacia enfasis en las buenas practicas. 
-              Los estudiantes aprendían sobre el impacto de la complejidad computacional al usar ciertas estructuras y analizaban algoritmos. 
-              Los temas cubiertos incluían estructuras como arrays, listas, árboles y grafos, así como técnicas de programación como recursión, algoritmos voraces (greedy) y backtracking.
-              Esta experiencia me permitió fortalecer mis habilidades pedagógicas y técnicas, contribuyendo significativamente al desarrollo académico de los estudiantes.
+            <div class="text-xs tracking-wide uppercase text-gray-400">
+              <p>
+                <time>Mar. 2021 - Ago. 2021</time> · Tandil, Argentina
+              </p>
+              <p >
+                Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN)
+              </p>
+            </div>
+          
+            <!-- Responsabilidades -->
+            <p class="mt-3 text-sm sm:text-sm lg:text-md">
+              Colaboré en la materia Programación 3 en la carrera de Tecnicatura Universitaria en Desarrollo de Aplicaciones Informáticas de la UNICEN:
             </p>
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Responsabilidades:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm sm:text-sm lg:text-md">
+              <li>Enseñé programación orientada a objetos con Java.</li>
+              <li>Guié a estudiantes en la resolución de problemas algorítmicos avanzados (recursión, algoritmos voraces, backtracking).</li>
+              <li>Evalué proyectos prácticos y promoví buenas prácticas de programación.</li>
+            </ul>
+          
+            <!-- Logros -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Logros:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Mejoré la comprensión de conceptos avanzados como POO y estructuras complejas (árboles, grafos).</li>
+            </ul>
+          
+            <!-- Habilidades -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Habilidades destacadas:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Docencia, POO, Análisis de Algoritmos, Comunicación Efectiva</li>
+            </ul>
           </div>
           <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-700">
-            <h3 class="text-xl font-semibold tracking-wide">Iraunkorrenek </h3>
-            <time class="text-xs tracking-wide uppercase text-gray-400">Dic. 2019 - Ago. 2021</time>
-            <p class="mt-3">
-              Trabajé en el equipo de desarrollo del portal de RxTro, una plataforma digital diseñada para simplificar el proceso de programación de citas entre profesionales de la salud y representantes de la industria.
-              Contribuí al desarrollo del sistema, mejorando sus funcionalidades existentes y creando nuevas, además de participar en su migración de framework para optimizar su rendimiento y eficiencia.
+            <h3 class="text-xl font-semibold tracking-wide">Iraunkorrenek</h3>
+            <p class="text-xs tracking-wide uppercase text-gray-400">
+              <time>Dic. 2019 - Ago. 2021</time> · Tandil, Argentina
             </p>
+            
+            <!-- Responsabilidades -->
+            <p class="mt-3 text-sm sm:text-sm lg:text-md">
+              Desarrollo y mejora de funcionalidades en RxTro, una plataforma que simplifica el proceso de citas en el sector salud:
+            </p>
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Responsabilidades:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm sm:text-sm lg:text-md">
+              <li>Implementación de nuevas características.</li>
+              <li>Migración del sistema de Liferay 6 a Liferay 7.</li>
+            </ul>
+          
+            <!-- Logros -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Logros:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Incremento del rendimiento del sistema tras la migración, permitiendo la adopción de nuevas funcionalidades.</li>
+            </ul>
+          
+            <!-- Habilidades -->
+            <h4 class="mt-3 text-lg font-semibold tracking-wide">Habilidades destacadas:</h4>
+            <ul class="list-disc list-inside ml-3 space-y-1 text-sm lg:text-md">
+              <li>Liferay, Java, JSP, Hibernate, SQL, Git, Servicios</li>
+            </ul>
           </div>
         </div>
       </div>
