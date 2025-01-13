@@ -1,7 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
 
-import "@/styles/global.css";
 interface Props {
   title: string;
   description?: string;
@@ -9,7 +8,7 @@ interface Props {
 }
 const {
   title,
-  description = "Nuestro blog de Astro",
+  description = "Blog para compartir lo que he aprendido a lo largo del camino como desarrolador, intercambiar ideas y seguir creciendo junto con otros entusiastas de la tecnología.",
   image = "/assets/blog-placeholder-1.jpg",
 } = Astro.props;
 
@@ -20,36 +19,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <!-- Global Metadata -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <!-- Font Preloads -->
-  <link
-    rel="preload"
-    href="/fonts/ProductSans-Bold.ttf"
-    as="font"
-    type="font/ttf"
-    crossorigin
-  />
-  <link
-    rel="preload"
-    href="/fonts/ProductSans-Light.ttf"
-    as="font"
-    type="font/ttf"
-    crossorigin
-  />
-  <link
-    rel="preload"
-    href="/fonts/ProductSans-Medium.ttf"
-    as="font"
-    type="font/ttf"
-    crossorigin
-  />
-  <link
-    rel="preload"
-    href="/fonts/ProductSans-Regular.ttf"
-    as="font"
-    type="font/ttf"
-    crossorigin
-  />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href={canonicalURL} />

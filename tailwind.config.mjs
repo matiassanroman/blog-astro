@@ -10,7 +10,7 @@ export default {
         "soft-light": "rgb(22 30 41 / 1)",
       },
       fontFamily: {
-        sans: ["ProductSans", "ui-sans-serif", "system-ui"],
+        sans: ["ui-sans-serif", "system-ui"],
         // Optionally, add other font families here
       },
     },

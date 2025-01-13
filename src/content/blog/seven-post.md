@@ -1,5 +1,5 @@
 ---
-title: "My Third Post"
+title: "My Seven Post"
 pubDate: "2023-12-29"
 image: "/articlesImages/blog-placeholder-1.jpg"
 tags: ["Astro", "Java"]

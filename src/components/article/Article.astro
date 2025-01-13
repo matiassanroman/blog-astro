@@ -38,7 +38,7 @@ const { title, image, pubDate, tags } = Astro.props;
     <div class="bg-white py-8 sm:py-6">
       <div class="container mx-auto px-6 sm:px-4 flex flex-col gap-8 md:flex-row">
         <!-- Artículo principal -->
-        <div transition:name={title} class="w-full md:w-3/4 md:border-r md:pr-6">
+        <div transition:name={title.replace(/\s+/g, '-').toLowerCase()} class="w-full md:w-3/4 md:border-r md:pr-6">
           <article>
             <img
               src={image}
@@ -62,7 +62,6 @@ const { title, image, pubDate, tags } = Astro.props;
               {posts.map((post) => (
                 
                   <a
-                    transition:name={post.data.title}
                     href={`/blog/article/${post.slug}`}
                     class="text-lg sm:text-base font-medium tracking-widest block px-4 py-1"
                   >

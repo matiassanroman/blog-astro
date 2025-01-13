@@ -16,9 +16,10 @@ type Props = CollectionEntry<"blog">["data"] & { slug: string } & { body: string
 const { image, title, pubDate, tags, slug, body } = Astro.props;
 ---
 
-<div transition:name={title}>
+<div>
   <article class="bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-xl">
     <a
+      transition:name={title.replace(/\s+/g, '-').toLowerCase()}
       rel="noopener noreferrer"
       href={`/blog/article/${slug}`}
       class="max-w-sm mx-auto group"

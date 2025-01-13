@@ -26,7 +26,7 @@ const getDescription = (content: string, length = 100) => {
     {
       posts.length > 0 && (
         <a
-          transition:name={posts[0].data.title}
+          transition:name={posts[0].data.title.replace(/\s+/g, '-').toLowerCase()}
           rel="noopener noreferrer"
           href={`/blog/article/${posts[0].slug}`}
           class="block max-w-sm gap-3 mx-auto sm:max-w-full group bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-xl lg:grid lg:grid-cols-12"
@@ -61,7 +61,7 @@ const getDescription = (content: string, length = 100) => {
         <div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.slice(1).map((post) => (
             <a
-              transition:name={post.data.title}
+              transition:name={post.data.title.replace(/\s+/g, '-').toLowerCase()}
               rel="noopener noreferrer"
               href={`/blog/article/${post.slug}`}
               class="max-w-sm mx-auto group bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-xl"
