@@ -1,10 +1,13 @@
-
-document.getElementById("hamburger").onclick = function toggleMenu() {
+function initNavMenu() {
+  const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("navbar-default");
-  navMenu.classList.toggle("hidden");
-};
 
-document.addEventListener("DOMContentLoaded", () => {
+  if (hamburger) {
+    hamburger.onclick = function toggleMenu() {
+      navMenu?.classList.toggle("hidden");
+    };
+  }
+
   const links = document.querySelectorAll(".nav-link");
   const currentPath = window.location.pathname;
 
@@ -25,4 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
   });
-});
+}
+
+// Ejecutar en la carga inicial del DOM
+document.addEventListener("DOMContentLoaded", initNavMenu);
+
+// Escuchar el evento de Astro para re-ejecutar el script después de una transición
+document.addEventListener("astro:after-swap", initNavMenu);

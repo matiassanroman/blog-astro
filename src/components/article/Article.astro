@@ -15,9 +15,8 @@ const { title, image, pubDate, tags } = Astro.props;
 ---
 
 <Layout title={title}>
-  <div class="flex flex-col">
     <!-- Encabezado -->
-    <div class="bg-gray-100 py-8 sm:py-6">
+    <div class="bg-gray-900 text-white py-8 sm:py-6">
       <div class="container mx-auto px-6 sm:px-4">
         <div class="flex gap-2">
           {
@@ -28,7 +27,7 @@ const { title, image, pubDate, tags } = Astro.props;
             ))
           }
         </div>
-        <h1 class="text-4xl sm:text-3xl font-bold text-gray-800 mb-2">
+        <h1 class="text-4xl sm:text-3xl font-bold mb-2">
           {title}
         </h1>
         <FormattedDate date={pubDate} />
@@ -39,7 +38,7 @@ const { title, image, pubDate, tags } = Astro.props;
     <div class="bg-white py-8 sm:py-6">
       <div class="container mx-auto px-6 sm:px-4 flex flex-col gap-8 md:flex-row">
         <!-- Artículo principal -->
-        <div class="w-full md:w-3/4 md:border-r md:pr-6" transition:name={title}>
+        <div transition:name={title} class="w-full md:w-3/4 md:border-r md:pr-6">
           <article>
             <img
               src={image}
@@ -55,16 +54,17 @@ const { title, image, pubDate, tags } = Astro.props;
         <!-- Sidebar -->
         <div class="w-full md:w-1/4 px-6 sm:px-4">
           <!-- Recent Posts -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-            <h2 class="text-xl sm:text-lg font-semibold text-gray-800 mb-4">
+          <div class="bg-gray-900 text-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl sm:text-lg font-semibold mb-4">
               Artículos Recientes:
             </h2>
             <ul class="list-none space-y-4">
               {posts.map((post) => (
                 
                   <a
+                    transition:name={post.data.title}
                     href={`/blog/article/${post.slug}`}
-                    class="text-lg sm:text-base text-blue-700 font-medium tracking-widest block px-4 py-1"
+                    class="text-lg sm:text-base font-medium tracking-widest block px-4 py-1"
                   >
                     {post.data.title}
                   </a>
@@ -73,8 +73,8 @@ const { title, image, pubDate, tags } = Astro.props;
             </ul>
           </div>
           <!-- Categories -->
-          <div class="bg-gray-100 p-6 mt-6 rounded-lg shadow-md">
-            <h2 class="text-xl sm:text-lg font-semibold text-gray-800 mb-4">
+          <div class="bg-gray-900 p-6 mt-6 rounded-lg shadow-md">
+            <h2 class="text-xl sm:text-lg font-semibold text-white mb-4">
               Categorías:
             </h2>
             <ul class="list-none space-y-3">
