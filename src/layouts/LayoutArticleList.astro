@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import BannerBlog from '@/components/BannerBlog.astro';
 import TagSelector from "@/components/TagSelector.astro";
 import Pagination from "@/components/article/Pagination.astro";
 
@@ -7,6 +8,7 @@ const { title, prevUrl, nextUrl, currentPage, lastPage } = Astro.props;
 ---
 
 <Layout title={title}>
+  <BannerBlog/>
   <div class="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
     <TagSelector />
     <section class="mt-6 w-full">

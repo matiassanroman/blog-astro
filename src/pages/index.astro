@@ -1,10 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Banner from '@/components/Banner.astro';
-import ContentSection from '@/components/home/ContentSection.astro';
+import AboutMeSection from '@/components/about/AboutMeSection.astro';
+import ExperienceSection from '@/components/about/ExperienceSection.astro';
 ---
 
 <Layout title="Home">
-	<Banner showButton={true}/>
-	<ContentSection />
+	<Banner />
+	<AboutMeSection />
+	<ExperienceSection />
 </Layout>

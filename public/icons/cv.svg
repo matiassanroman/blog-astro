@@ -1,0 +1,11 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg{fill:#1D4ED8;}
+    .icon{fill:#fff;}
+  </style>
+  <circle class="bg" cx="64" cy="64" r="64"/>
+  <!-- Flecha hacia abajo -->
+  <path class="icon" d="M64 34 v40 l-12 -12 h8 v-28 h8 v28 h8 l-12 12 z"/>
+  <!-- Línea base -->
+  <rect class="icon" x="44" y="78" width="40" height="6" rx="2" ry="2"/>
+</svg>
