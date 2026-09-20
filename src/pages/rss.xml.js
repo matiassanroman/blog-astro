@@ -5,7 +5,7 @@ export async function GET(context) {
   return rss({
     title: "Portfolio de San Roman Matias",
     description:
-      "Portfolio para compartir lo que he aprendido a lo largo del camino como desarrolador, intercambiar ideas y seguir creciendo junto con otros entusiastas de la tecnología.",
+      "Artículos sobre desarrollo de software, proyectos personales y tecnologías que exploro y utilizo a lo largo de mi experiencia profesional.",
     site: context.site,
     items: posts.map((post) => ({
       ...post.data,
