@@ -63,9 +63,9 @@ const { data, type } = Astro.props;
         }
 
         <a
-          href={`/articles/article/${data.articleHref}`}
-          target="_blank"
+          transition:name={data.title.replace(/\s+/g, "-").toLowerCase()}
           rel="noopener noreferrer"
+          href={`/articles/article/${data.articleHref}`}
           class="text-sm font-medium underline underline-offset-4 transition-colors text-gray-900 hover:text-blue-700"
         >
           ARTÍCULO
