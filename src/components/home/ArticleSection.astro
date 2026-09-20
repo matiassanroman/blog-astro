@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import ContentList from "@/components/content/ContentList.astro";
+import type { ContentItem } from "@/utils/types/content";
+import { getDescription } from "@/utils/functions";
+
+const articles = (await getCollection("articulo"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3)
+  .map(
+    (article): ContentItem => ({
+      image: article.data.image,
+      title: article.data.title,
+      pubDate: article.data.pubDate,
+      description: getDescription(article.body),
+      tags: article.data.tags,
+      articleHref: `${article.slug}`,
+    })
+  );
+---
+
+<ContentList data={articles.slice(0, 3)} type="article" />

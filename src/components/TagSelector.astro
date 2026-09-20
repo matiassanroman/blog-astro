@@ -1,13 +1,14 @@
 ---
-import { getAllTags } from "@/utils/getAllTags";
+import { getAllTags } from "@/utils/functions";
 const tags = await getAllTags();
 ---
 
-<div class="flex gap-3 justify-center">
+<!-- <div class="flex flex-wrap gap-2"> -->
+<div class="flex justify-center gap-2 flex-wrap pt-8">
   {
     tags.map((tag) => (
-      <a href={`/blog/${tag.toLowerCase()}`}>
-        <span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-700  font-medium tracking-widest">
+      <a href={`/articles/${tag.toLowerCase()}`}>
+        <span class="block py-1 px-3 rounded bg-blue-50 text-blue-700 font-medium tracking-widest text-xs text-center">
           {tag}
         </span>
       </a>

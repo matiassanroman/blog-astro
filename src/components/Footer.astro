@@ -1,5 +1,5 @@
 ---
-import navData from "@/scripts/navData";
+import { navData } from "@/utils/data/navData";
 ---
 
 <footer class="flex flex-col space-y-5 justify-center bg-gray-900 text-white">
@@ -13,6 +13,14 @@ import navData from "@/scripts/navData";
     }
   </nav>
   <div class="flex justify-center space-x-5">
+    <a
+      href="/files/Curriculum Vitae - San Roman Matias.pdf"
+      download="Curriculum Vitae - San Roman Matias.pdf"
+      class="flex flex-col items-center text-center text-white hover:text-gray-300"
+    >
+      <img src="/icons/cv.svg" alt="Download CV Icon" class="w-10 h-10 mr-2" />
+      <span class="mt-2 text-xs sm:text-xs lg:text-base">Curriculum</span>
+    </a>
     <a
       href="https://github.com/matiassanroman"
       target="_blank"
@@ -71,7 +79,5 @@ import navData from "@/scripts/navData";
       <span class="mt-2 text-xs sm:text-xs lg:text-base">Contáctame</span>
     </a>
   </div>
-  <p class="text-center font-medium">
-    &copy; 2024 todos los derechos reservados.
-  </p>
+  <p class="text-center font-medium">&copy; 2025 Matias San Roman</p>
 </footer>

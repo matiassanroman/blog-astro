@@ -1,0 +1,42 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import LayoutPagination from "@/layouts/LayoutPagination.astro";
+import ContentList from "@/components/content/ContentList.astro";
+import type { ContentItem } from "@/utils/types/content";
+import { getDescription } from "@/utils/functions";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const articles = (await getCollection("articulo")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  return paginate(articles, {
+    pageSize: 6,
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+const articles = page.data.map(
+  (article): ContentItem => ({
+    image: article.data.image,
+    title: article.data.title,
+    pubDate: article.data.pubDate,
+    description: getDescription(article.body),
+    tags: article.data.tags,
+    articleHref: `${article.slug}`,
+  })
+);
+---
+
+<LayoutPagination
+  title="Artículos"
+  description="Un espacio donde documento proyectos, exploro tecnologías y comparto lo que voy aprendiendo durante el proceso."
+  prevUrl={page.url.prev}
+  nextUrl={page.url.next}
+  currentPage={page.currentPage}
+  lastPage={page.lastPage}
+>
+  <ContentList data={articles} type="article" showFull={true} />
+</LayoutPagination>

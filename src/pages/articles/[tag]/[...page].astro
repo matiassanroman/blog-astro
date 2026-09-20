@@ -1,0 +1,47 @@
+---
+import { getAllTags, getCollectionForTag } from "@/utils/functions";
+import type { GetStaticPaths } from "astro";
+import LayoutPagination from "@/layouts/LayoutPagination.astro";
+import ContentList from "@/components/content/ContentList.astro";
+import { getDescription } from "@/utils/functions";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const tags = (await getAllTags()).map((tag) => tag.toLowerCase());
+
+  const paths = [];
+  for (const tag of tags) {
+    const postsForTag = await getCollectionForTag(tag);
+    const paginatedPaths = paginate(postsForTag, {
+      params: { tag },
+      pageSize: 6,
+    });
+    paths.push(...paginatedPaths);
+  }
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+const articles = page.data.map((article) => ({
+  image: article.data.image,
+  title: article.data.title,
+  pubDate: article.data.pubDate,
+  description: getDescription(article.body),
+  tags: article.data.tags,
+  articleHref: `${article.slug}`,
+}));
+---
+
+<LayoutPagination
+  title=`Artículos sobre: ${page.url.current.split("/")[2]}`
+  prevUrl={page.url.prev}
+  ,
+  nextUrl={page.url.next}
+  ,
+  currentPage={page.currentPage}
+  ,
+  lastPage={page.lastPage}
+>
+  <ContentList data={articles} type="article" showFull={true} />
+</LayoutPagination>

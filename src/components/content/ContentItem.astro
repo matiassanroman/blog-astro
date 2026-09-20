@@ -1,0 +1,94 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
+import TagSelector from "@/components/TagSelector.astro";
+
+const posts = (await getCollection("articulo"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 4);
+
+type Props = CollectionEntry<"articulo">["data"];
+
+const { title, image, pubDate, tags } = Astro.props;
+---
+
+<Layout title={title}>
+  <!-- Encabezado -->
+  <div class="bg-gray-900 text-white py-8 sm:py-6">
+    <div class="mx-auto px-6 sm:px-4">
+      <div class="flex flex-wrap gap-2 md:pl-4 mb-3">
+        {
+          tags.map((tag) => (
+            <span class="rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-800">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-2 md:pl-2">
+        {title}
+      </h1>
+      <FormattedDate date={pubDate} />
+    </div>
+  </div>
+
+  <!-- Contenido Principal -->
+  <div class="bg-white py-8 sm:py-6">
+    <!-- <div class="container mx-auto px-6 sm:px-4 flex flex-col md:flex-row gap-2"> -->
+    <div
+      class="mx-auto max-w-screen-lg px-6 sm:px-4 flex flex-col md:flex-row gap-6"
+    >
+      <!-- Artículo principal -->
+      <!-- <div transition:name={title.replace(/\s+/g, '-').toLowerCase()} class="w-full md:w-3/4 lg:w-3/4 md:border-r md:pr-6"> -->
+      <div
+        transition:name={title.replace(/\s+/g, "-").toLowerCase()}
+        class="group basis-2/3 md:border-r md:pr-6 md:pl-4"
+      >
+        <article>
+          <img
+            src={image}
+            alt="Articulo Featured Image"
+            class="mb-8 h-48 w-full rounded-lg object-cover shadow-sm"
+          />
+          <div class="prose prose-gray max-w-none lg:prose-lg sm:prose-sm">
+            <slot />
+          </div>
+        </article>
+      </div>
+
+      <!-- Sidebar -->
+      <!-- <div class="w-full md:w-1/4 lg:w-1/4 px-6 sm:px-4"> -->
+      <div class="basis-1/3 px-6 sm:px-4">
+        <!-- Recent Posts -->
+        <div class="bg-gray-900 text-white p-6 rounded-lg shadow-md">
+          <h2 class="text-lg sm:text-xl font-semibold mb-4">
+            Artículos Recientes:
+          </h2>
+          <ul class="list-none space-y-4">
+            {
+              posts.map((post) => (
+                <a
+                  href={`/articles/article/${post.slug}`}
+                  class="text-xs font-medium tracking-widest block px-4 py-1"
+                >
+                  {post.data.title}
+                </a>
+              ))
+            }
+          </ul>
+        </div>
+        <!-- Categories -->
+        <div class="bg-gray-900 p-6 mt-6 rounded-lg shadow-md">
+          <h2 class="text-lg sm:text-xl font-semibold text-white mb-4">
+            Etiquetas:
+          </h2>
+          <ul class="list-none space-y-3">
+            <TagSelector />
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,13 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import PageBanner from "@/components/PageBanner.astro";
+import ExperienceTimeline from "@/components/experience/ExperienceTimeline.astro";
+---
+
+<Layout title="Experience">
+  <PageBanner
+    title="Experiencia"
+    description="Proyectos en los que he participado, tecnologías utilizadas y principales responsabilidades y logros a lo largo de mi trayectoria profesional."
+  />
+  <ExperienceTimeline showFull={true} />
+</Layout>

@@ -1,12 +1,16 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Banner from '@/components/Banner.astro';
-import AboutMeSection from '@/components/about/AboutMeSection.astro';
-import ExperienceSection from '@/components/about/ExperienceSection.astro';
+import Layout from "@/layouts/Layout.astro";
+import Banner from "@/components/Banner.astro";
+import AboutMeSection from "@/components/about/AboutMeSection.astro";
+import ExperienceTimeline from "@/components/experience/ExperienceTimeline.astro";
+import ProjectSection from "@/components/home/ProjectSection.astro";
+import ArticleSection from "@/components/home/ArticleSection.astro";
 ---
 
 <Layout title="Home">
-	<Banner />
-	<AboutMeSection />
-	<ExperienceSection />
+  <Banner />
+  <AboutMeSection />
+  <ExperienceTimeline showFull={false} />
+  <ProjectSection />
+  <ArticleSection />
 </Layout>

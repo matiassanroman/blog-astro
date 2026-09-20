@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import PageBanner from "@/components/PageBanner.astro";
+import TagSelector from "@/components/TagSelector.astro";
+import Pagination from "@/components/content/Pagination.astro";
+
+const { title, description, prevUrl, nextUrl, currentPage, lastPage } =
+  Astro.props;
+---
+
+<Layout title={title}>
+  <PageBanner title={title} description={description} />
+  {title.includes("Artículos") && <TagSelector />}
+  <div class="w-full mx-auto space-y-6 sm:space-y-12">
+    <slot />
+    <Pagination
+      prevUrl={prevUrl}
+      nextUrl={nextUrl}
+      currentPage={currentPage}
+      lastPage={lastPage}
+    />
+  </div>
+</Layout>

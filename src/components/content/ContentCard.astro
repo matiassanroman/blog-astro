@@ -1,0 +1,77 @@
+---
+import type { ContentItem } from "@/utils/types/content";
+import FormattedDate from "@/components/FormattedDate.astro";
+
+interface Props {
+  data: ContentItem;
+  type: string;
+}
+
+const { data, type } = Astro.props;
+---
+
+<article
+  class="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+>
+  <div class="overflow-hidden">
+    <img
+      src={data.image}
+      alt={`Captura de ${data.title}`}
+      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+
+  <div class="flex flex-1 flex-col p-5">
+    <h3
+      class="text-xl font-semibold leading-snug tracking-tight text-gray-900 group-hover:text-blue-700"
+    >
+      {data.title}
+    </h3>
+    {
+      type === "article" && data.pubDate && (
+        <FormattedDate date={data.pubDate} />
+      )
+    }
+    <p class="mt-3 text-sm leading-relaxed text-gray-600">
+      {data.description}
+    </p>
+
+    <div class="mt-auto pt-5">
+      <div class="flex flex-wrap gap-2">
+        {
+          data.tags?.map((tag) => (
+            <span class="rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-800">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+
+      <div class="mt-10 flex items-center justify-between px-1">
+        {
+          type === "project" && (
+            <a
+              href={data.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm font-medium underline underline-offset-4 transition-colors text-gray-900 hover:text-blue-700"
+            >
+              PROYECTO
+              <span class="ml-1 inline-block">↗</span>
+            </a>
+          )
+        }
+
+        <a
+          href={`/articles/article/${data.articleHref}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium underline underline-offset-4 transition-colors text-gray-900 hover:text-blue-700"
+        >
+          ARTÍCULO
+          <span class="ml-1 inline-block">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>

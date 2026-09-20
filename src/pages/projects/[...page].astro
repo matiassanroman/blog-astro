@@ -1,0 +1,25 @@
+---
+import type { GetStaticPaths } from "astro";
+import { projects } from "@/utils/data/project";
+import LayoutPagination from "@/layouts/LayoutPagination.astro";
+import ContentList from "@/components/content/ContentList.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return paginate(projects, {
+    pageSize: 6,
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<LayoutPagination
+  title="Proyectos"
+  description="Una selección de proyectos personales que he desarrollado para aprender, experimentar con nuevas tecnologías y resolver problemas concretos."
+  prevUrl={page.url.prev}
+  nextUrl={page.url.next}
+  currentPage={page.currentPage}
+  lastPage={page.lastPage}
+>
+  <ContentList data={page.data} type="project" showFull={true} />
+</LayoutPagination>
