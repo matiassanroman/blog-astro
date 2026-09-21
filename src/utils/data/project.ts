@@ -10,40 +10,41 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Habit Check",
-    description: "Aplicación móvil para el seguimiento diario de hábitos.",
+    description:
+      "Aplicación para crear y gestionar hábitos diarios, registrar tus avances y visualizar tu progreso de forma sencilla.",
     tags: ["React Native", "Expo", "JavaScript"],
-    image: "/projectImage/habit-check.webp",
-    href: "https://play.google.com/",
+    image: "/projectImage/habit-check.png",
+    href: "https://github.com/matiassanroman/habitus",
     articleHref: "habit-check",
   },
 
   {
     title: "SMEvolutionSport",
     description:
-      "Aplicación web para la gestión y digitalización de procesos de un gimnasio.",
+      "Aplicación web para la gestión de socios, pagos y actividades de un gimnasio.",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "PWA"],
-    image: "/projectImage/smevolution-sport.webp",
-    href: "https://smevolutionsport.ar/",
+    image: "/projectImage/smevolution-sport.png",
+    href: "https://smevolutionsport.ar",
     articleHref: "smevolution-sport",
   },
 
   {
     title: "Smart Expenses",
     description:
-      "Automatización para procesar y clasificar movimientos bancarios y registrarlos en Google Sheets.",
+      "Automatización para procesar y clasificar movimientos bancarios a partir de correos electrónicos y registrarlos en Google Sheets.",
     tags: ["Python", "GitHub Actions", "Gmail", "Google Sheets"],
-    image: "/projectImage/smart-expenses.webp",
-    href: "#",
+    image: "/projectImage/smart-expenses.png",
+    href: "https://github.com/matiassanroman/smart_expenses",
     articleHref: "smart-expenses",
   },
 
   {
     title: "Portfolio Website",
     description:
-      "Sitio web personal para mostrar proyectos y artículos, construido con Astro y Tailwind CSS.",
+      "Portfolio personal con mi experiencia profesional, proyectos personales y artículos sobre desarrollo de software y tecnologías que exploro y utilizo.",
     tags: ["Astro", "Tailwind CSS", "TypeScript"],
-    image: "/projectImage/blog.webp",
-    href: "#",
+    image: "/projectImage/blog.png",
+    href: "https://github.com/matiassanroman/blog-astro",
     articleHref: "portfolio-website",
   },
 ];
