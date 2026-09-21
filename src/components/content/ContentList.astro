@@ -18,7 +18,7 @@ const { data, type, showFull } = Astro.props;
   <div
     class:list={["rounded-lg p-6 md:p-8", !showFull && " bg-white shadow-lg"]}
   >
-    <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-6xl lg:px-8">
       {
         !showFull && (
           <div class="mb-8 flex items-center justify-between border-b border-gray-200 pb-4">
@@ -28,7 +28,7 @@ const { data, type, showFull } = Astro.props;
           </div>
         )
       }
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {data.map((item) => <ContentCard data={item} type={type} />)}
       </div>
 
