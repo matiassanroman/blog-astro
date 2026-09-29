@@ -19,26 +19,26 @@ export const experiences: Experience[] = [
   {
     company: "Santander Digital Services",
     careerNote:
-      "Inicialmente participé en el proyecto como consultor externo a través de Talan y posteriormente fui internalizado como empleado de Santander Digital Services.",
+      "Me incorporé al proyecto como consultor externo a través de Talan y posteriormente pasé a formar parte de Santander Digital Services como empleado.",
     position: "Software Developer",
     startDate: "Abr. 2023",
     endDate: "Actualidad",
     location: "Málaga, España",
 
     summary:
-      "Desarrollo y mantenimiento de procesos automatizados para transformar datos dispersos en información accesible para equipos funcionales, mediante pipelines y reportes.",
+      "Desarrollo y mantenimiento de procesos automatizados para transformar datos dispersos en información accesible para equipos funcionales y reguladores, mediante pipelines y reportes.",
 
     responsibilities: [
-      "Desarrollo y mantenimiento de procesos con Scala y Spark dentro de una arquitectura de datos previamente definida.",
+      "Implementación y mantenimiento de procesos con Scala y Spark dentro de una arquitectura de datos previamente definida con Databricks.",
       "Adaptación y creación de pipelines para incorporar nuevos reportes y necesidades de análisis.",
       "Orquestación de tareas y procesos mediante Apache Airflow.",
       "Preparación e ingesta de datos para su consulta y visualización mediante Elasticsearch y Kibana.",
-      "Creación y mantenimiento de dashboards y reportes para equipos funcionales.",
+      "Creación y mantenimiento de dashboards y reportes.",
     ],
 
     achievements: [
       "Automatización de un proceso de análisis que anteriormente requería combinar múltiples archivos Excel y realizar consultas SQL manualmente.",
-      "Disponibilización de reportes y dashboards en Kibana para facilitar la consulta de información por parte de los equipos funcionales.",
+      "Disponibilización de reportes y dashboards en Kibana para facilitar la consulta de información.",
     ],
 
     technologies: [
@@ -87,18 +87,18 @@ export const experiences: Experience[] = [
     location: "Buenos Aires, Argentina",
 
     summary:
-      "Participación en la modernización de un sistema legacy para la gestión y visualización de resúmenes de liquidación para comercios.",
+      "Responsable en la modernización de un sistema legacy para la gestión y visualización de resúmenes de liquidación para comercios.",
 
     responsibilities: [
       "Participación en la migración y modernización del sistema de resúmenes de liquidación para comercios.",
       "Migración progresiva de funcionalidades desde Java 7 y Scala hacia Java 8 y Spring Boot.",
       "Migración de funcionalidades hacia una arquitectura basada en APIs REST y servicios.",
-      "Participación en la modernización de la interfaz web mediante el desarrollo de un prototipo con React.",
+      "Modernización de la interfaz web mediante el desarrollo de un prototipo con React.",
       "Contribución a la reorganización y documentación durante el proceso de modernización.",
     ],
 
     achievements: [
-      "Contribución a la modernización tecnológica de un sistema legacy, estableciendo una base más mantenible y desacoplada.",
+      "Modernización tecnológica de un sistema legacy, estableciendo una base más mantenible y desacoplada.",
       "Migración de funcionalidades hacia APIs REST, facilitando la evolución y futuras integraciones del sistema.",
       "Desarrollo de un prototipo en React para modernizar la búsqueda y visualización de resúmenes de liquidación.",
     ],
@@ -153,8 +153,8 @@ export const experiences: Experience[] = [
       "Desarrollo y evolución de RxTro, una plataforma orientada a simplificar la gestión de citas en el sector salud.",
 
     responsibilities: [
-      "Desarrollo e implementación de nuevas funcionalidades para la plataforma.",
-      "Participación en la migración del sistema de Liferay 6 a Liferay 7.",
+      "Implementación de nuevas funcionalidades para la plataforma.",
+      "Responsable en la migración del sistema de Liferay 6 a Liferay 7.",
       "Mantenimiento y evolución de funcionalidades existentes.",
       "Desarrollo y mantenimiento de componentes utilizando Java, JSP y JavaScript.",
     ],
